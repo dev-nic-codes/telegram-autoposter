@@ -1,0 +1,5 @@
+requests==2.34.2
+Pillow==12.2.0
+pyinstaller==6.20.0
+tzdata==2026.2
+defusedxml==0.7.1

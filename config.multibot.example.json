@@ -1,0 +1,203 @@
+{
+  "user_agent": "windows:telegram-autoposter:v2.0 (by /u/your_reddit_username)",
+  "reddit_client_id": "REPLACE_ME",
+  "reddit_client_secret": "REPLACE_ME",
+  "post_interval_minutes": 60,
+  "post_interval_randomize": true,
+  "randomize_range_minutes": 5,
+  "active_hours_enabled": false,
+  "active_hours_start": "08:00",
+  "active_hours_end": "23:00",
+  "timezone": "UTC",
+  "weekly_schedule_enabled": false,
+  "weekly_schedule": {
+    "weekday": {
+      "post_interval_minutes": 60,
+      "active_hours_enabled": true,
+      "active_hours_start": "08:00",
+      "active_hours_end": "23:00",
+      "quiet_hours": [
+        {
+          "start": "00:00",
+          "end": "07:30"
+        }
+      ],
+      "peak_hours": [
+        {
+          "start": "18:00",
+          "end": "22:00",
+          "post_interval_minutes": 35
+        }
+      ]
+    },
+    "weekend": {
+      "post_interval_minutes": 90
+    },
+    "sunday": {
+      "paused": true
+    }
+  },
+  "emergency_pause_enabled": true,
+  "emergency_pause_window_minutes": 30,
+  "emergency_pause_thresholds": {
+    "reddit": 5,
+    "telegram": 3,
+    "download": 6,
+    "empty_feed": 4
+  },
+  "emergency_pause_notify_admin": true,
+  "auto_recovery_enabled": true,
+  "auto_recovery_upload_retries": 2,
+  "auto_recovery_retry_delay_seconds": 5,
+  "auto_recovery_compress_on_retry": true,
+  "auto_recovery_video_target_mb": 30,
+  "auto_recovery_image_target_mb": 8,
+  "auto_recovery_stuck_pending_minutes": 90,
+  "auto_recovery_notify_threshold": 3,
+  "auto_recovery_notify_window_minutes": 30,
+  "auto_recovery_notify_cooldown_minutes": 30,
+  "auto_approve_after_minutes": 10,
+  "approval_required": true,
+  "min_upvotes": 0,
+  "max_post_age_hours": 24,
+  "min_image_width": 800,
+  "min_image_height": 0,
+  "image_quality_rules_enabled": true,
+  "image_aspect_ratio_min": 0.2,
+  "image_aspect_ratio_max": 5.0,
+  "image_blur_filter_enabled": false,
+  "image_blur_score_min": 35.0,
+  "image_screenshot_filter_enabled": false,
+  "image_text_heavy_filter_enabled": false,
+  "image_text_heavy_max_edge_density": 0.18,
+  "skip_nsfw": true,
+  "title_blacklist": [
+    "onlyfans",
+    "subscribe",
+    "link in bio"
+  ],
+  "title_whitelist": [],
+  "max_images_in_row": 3,
+  "avoid_duplicate_subreddit_streak": 3,
+  "duplicate_crosspost_blocking": true,
+  "duplicate_title_similarity_enabled": true,
+  "duplicate_title_similarity_threshold": 0.88,
+  "duplicate_title_similarity_history_limit": 500,
+  "author_cooldown_enabled": false,
+  "author_cooldown_hours": 24,
+  "smart_scoring_enabled": true,
+  "smart_scoring_top_pool_size": 8,
+  "smart_scoring_weights": {
+    "upvotes": 0.35,
+    "comments": 0.2,
+    "freshness": 0.2,
+    "media_type": 0.1,
+    "title_quality": 0.15,
+    "subreddit_repetition": 0.2
+  },
+  "caption_mode": "template",
+  "caption_template": "@ExampleChannel",
+  "caption_footer_template": "More posts: @ExampleChannel",
+  "caption_variants": [
+    {
+      "name": "Title with credit",
+      "mode": "source_with_credit"
+    },
+    {
+      "name": "Title with footer",
+      "mode": "source_plus_footer",
+      "footer_template": "More posts: @ExampleChannel"
+    },
+    {
+      "name": "Channel only",
+      "mode": "template",
+      "template": "@ExampleChannel"
+    }
+  ],
+  "add_reddit_link_button": false,
+  "add_subreddit_hashtag": false,
+  "spoiler_posts_enabled": false,
+  "auto_reactions_enabled": true,
+  "auto_reaction_emojis": [
+    "👍",
+    "❤",
+    "🔥",
+    "🥰",
+    "👏",
+    "😻"
+  ],
+  "max_video_length_seconds": 300,
+  "video_audio_policy": "allow_silent",
+  "video_orientation_rule": "any",
+  "video_convert_to_mp4": true,
+  "video_compression_enabled": true,
+  "video_compression_target_mb": 40,
+  "max_download_mb": 45,
+  "gallery_posts_enabled": true,
+  "min_gallery_items": 2,
+  "max_gallery_items": 6,
+  "domain_downloaders_enabled": true,
+  "imgur_album_downloads_enabled": true,
+  "html_media_resolver_enabled": true,
+  "reddit_cache_minutes": 3,
+  "max_previews_per_10min": 8,
+  "daily_post_limit": 0,
+  "bots": [
+    {
+      "name": "Cat Orbit",
+      "state_file": "state.json",
+      "bot_token": "REPLACE_ME",
+      "admin_chat_id": 0,
+      "channels": [
+        {
+          "username": "REPLACE_ME",
+          "description": "Cat channel"
+        }
+      ],
+      "subreddits": [
+        "cats",
+        "kittens",
+        "CatsBeingAdorable"
+      ],
+      "subreddit_rules": {
+        "cats": {
+          "min_upvotes": 25,
+          "max_post_age_hours": 12,
+          "media_type": "image",
+          "skip_nsfw": true,
+          "caption_template": "{title}\n\nMore cats: @ExampleCatChannel",
+          "caption_footer": "More cats: @ExampleCatChannel",
+          "priority_weight": 1.5
+        },
+        "kittens": {
+          "priority_weight": 2.0
+        }
+      },
+      "spoiler_posts_enabled": false,
+      "caption_template": "@ExampleCatChannel",
+      "caption_footer_template": "More cats: @ExampleCatChannel"
+    },
+    {
+      "name": "Dog Orbit",
+      "state_file": "states/dog-orbit.json",
+      "bot_token": "REPLACE_ME",
+      "admin_chat_id": 0,
+      "channels": [
+        {
+          "username": "REPLACE_ME",
+          "description": "Dog channel"
+        }
+      ],
+      "subreddits": [
+        "dogs",
+        "puppies",
+        "rarepuppers"
+      ],
+      "post_interval_minutes": 45,
+      "spoiler_posts_enabled": true,
+      "caption_mode": "source_plus_footer",
+      "caption_template": "@ExampleDogChannel",
+      "caption_footer_template": "Follow for more dogs: @ExampleDogChannel"
+    }
+  ]
+}

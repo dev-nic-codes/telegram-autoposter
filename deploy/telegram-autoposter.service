@@ -1,0 +1,29 @@
+[Unit]
+Description=Telegram AutoPoster
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=autoposter
+Group=autoposter
+WorkingDirectory=/opt/telegram-autoposter
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/telegram-autoposter/.venv/bin/python /opt/telegram-autoposter/run_bots.py
+Restart=always
+RestartSec=10
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+ReadWritePaths=/opt/telegram-autoposter
+
+[Install]
+WantedBy=multi-user.target
