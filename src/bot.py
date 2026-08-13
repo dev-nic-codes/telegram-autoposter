@@ -813,8 +813,8 @@ class RedditTelegramBot:
 
         rows = [
             [
-                self._menu_button("✅ Post Now", "menu:act:main:approve"),
                 self._menu_button("⏭️ Skip", "menu:act:main:skip"),
+                self._menu_button("✅ Post Now", "menu:act:main:approve"),
             ],
             [
                 self._menu_button("🐾 New Post", "menu:act:main:new_post"),
@@ -1756,8 +1756,8 @@ class RedditTelegramBot:
         keyboard = self.telegram.create_inline_keyboard(
             [
                 [
-                    {"text": "Post Now", "callback_data": "approve"},
                     {"text": "Skip", "callback_data": "skip"},
+                    {"text": "Post Now", "callback_data": "approve"},
                 ],
             ]
         )

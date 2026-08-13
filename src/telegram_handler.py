@@ -469,7 +469,7 @@ class TelegramHandler:
     def create_approval_keyboard(self) -> Dict:
         """Create standard approval keyboard"""
         return self.create_inline_keyboard(
-            [[{"text": "✅ Approve", "callback_data": "approve"}, {"text": "❌ Skip", "callback_data": "skip"}]]
+            [[{"text": "❌ Skip", "callback_data": "skip"}, {"text": "✅ Approve", "callback_data": "approve"}]]
         )
 
     def looks_like_image(self, data: bytes) -> bool:
